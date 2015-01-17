@@ -5,18 +5,23 @@
   <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
   <link rel="icon" href="../assets/bw_logoNoText.png" type="image/x-icon" />
   <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
   <style>
   body {
     background-color: #53626F;
   }
 
+  #splash {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
   #logo {
     display: block;
-    margin: 100px auto 0 auto;
+    margin: 0 auto 0 auto;
     height: 200px;
   }
 
@@ -89,7 +94,6 @@
     
   #register .alt-register a {
     color: #b5ca62;
-
   }
 
   #register .alt-register a:hover {
@@ -97,14 +101,84 @@
     text-decoration: none;
   }
   
+  /* Schedule Properties */
+  #scheduleBlock {
+    background: #FFF;
+    padding: 50px 150px 50px 150px;
+  }
+  #scheduleTitle {
+    font-family: "Open Sans", sans-serif;
+    font-size: 40px;
+    font-weight: 300;
+    color: #52626F;
+  }
+  .carousel-inner {
+    height: 500px;
+  }
+  .scheduleDates {
+    background: #ff0000;
+    display: inline-block;
+    cursor: pointer;
+    margin: 10px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+  }
+  .circle {
+      width:100px;
+      height:100px;
+      border-radius:50px;
+      font-size:20px;
+      color:#fff;
+      line-height:100px;
+      text-align:center;
+      background:#79BCD1;
+  }
+  #schedule {
+    background: #dfdfdf;
+    margin-top: 10px;
+  }
+  .scheduleTitle{
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+    font-size: 30px;
+    margin: 50px auto 30px 50px;
+  }
+  .scheduleItem{
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin: 40px;
+  }
+  .scheduleItemTime {
+    font-size: 16px;
+  }
+  .scheduleItemTitle {
+    font-weight: 300;
+    font-size: 25px;
+    color: #79BCD1;
+    margin: 10px 0 10px 0;
+  }
+  .scheduleItemLocationLink{
+    color: #000;
+  }
+  .scheduleItemLocationLink:hover {
+    text-decoration: none;
+    color: #52626F;
+  }
+  .scheduleItemHr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
   </style>
 </head>
 <body>
 
-<div class="container-fluid">
+<div class="container-fluid" id="splash">
   <div class="row">
     <div id="main" class="col-xs-offset-2 col-xs-8">
-      <img id="logo" src="../assets/conference_logo4.png" alt="" />
+      <img id="logo" src="assets/conference_logo4.png" alt="" />
       <h1 class="title">Eta Kappa Nu, Mu Chapter</h1>
       <h2 class="subtitle">Student Leadership Conference</h2>
       <h3 class="title-meta">March 20 - 22, 2015 &mdash; UC Berkeley</h3>
@@ -114,6 +188,67 @@
         <span class="alt-register">Are you a company? <a href="https://drive.google.com/file/d/0Bw4EcWzFImvWYWZmZkJ6eVY0b00/edit">See our sponsorship opportunities</a>.</span>
       </div>
     </div>
+  </div>
+</div>
+
+<div class="container-fluid" id="scheduleBlock">
+  <div id="scheduleDateContainer" align="center">
+    <h2 id="scheduleTitle">Schedule of Events</h2>
+    <p class="scheduleDates circle" data-target="#schedule" data-slide-to="0">Friday</p>
+    <p class="scheduleDates circle" data-target="#schedule" data-slide-to="1">Saturday</p>
+    <p class="scheduleDates circle" data-target="#schedule" data-slide-to="2">Sunday</p>
+  </div>
+
+  <div id="schedule" class="carousel slide" data-ride="carousel" data-interval="false">
+    <!-- Indicators -->
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <h3 class="scheduleTitle">Friday, March 20</h3>
+
+        <!-- Begin item -->
+        <div class="scheduleItem">
+          <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+          <span class="scheduleItemTime">2:00 PM - 5:00 PM</span>
+          <h4 class="scheduleItemTitle">Hotel Check-In</h4>
+          <hr class="scheduleItemHr">
+          <a class="scheduleItemLocationLink" href="https://www.google.com/maps/place/2600+Durant Avenue,+Berkeley,+CA+94704">
+            <i class="fa fa-map-marker"></i>
+            <span class="scheduleItemLocation">Hotel Durant</span>
+          </a>
+          or
+          <a class="scheduleItemLocationLink" href="https://www.google.com/maps/place/2086+Allston+Way,+Berkeley,+CA+94704">
+            <span class="scheduleItemLocation">Hotel Shattuck</span>
+          </a>
+        </div>
+        <!-- end item -->
+
+        <!-- Begin item -->
+        <div class="scheduleItem">
+          <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+          <span class="scheduleItemTime">4:30 PM - 6:30 PM</span>
+          <h4 class="scheduleItemTitle">Registration</h4>
+          <hr class="scheduleItemHr">
+          <a class="scheduleItemLocationLink" href="https://www.google.com/maps/place/210+Stadium+Rim+Way,+Berkeley,+CA+94720">
+            <i class="fa fa-map-marker"></i>
+            <span class="scheduleItemLocation">Stadium - University Club</span>
+          </a>
+        </div>
+        <!-- end item -->
+
+      </div>
+
+      <div class="item">
+        <h3 class="scheduleTitle">Saturday, March 21</h3>
+      </div>
+
+      <div class="item">
+        <h3 class="scheduleTitle">Sunday, March 22</h3>
+      </div>
+
+    </div>
+
   </div>
 </div>
 
