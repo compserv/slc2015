@@ -176,8 +176,11 @@
   /* FAQ */
   #faq {
     background: #bddee7;
-    padding: 50px;
   }
+  #faqText {
+    padding: 40px;
+  }
+
 
   #faqTitle {
     font-family: "Open Sans", sans-serif;
@@ -199,7 +202,7 @@
     margin: 0;
   }
   #map {
-    height: 474px;
+    height: 520px;
     width: 100%;
   }
 
@@ -299,9 +302,9 @@
   </div>
 </div>
 
-<div class="container-fluid" align="center">
+<div class="container-fluid" id="faq" align="center">
   <div class="row">
-    <div class="col-md-7" id="faq">
+    <div class="col-md-7" id="faqText">
   <h2 id="faqTitle">Getting to SLC 2015</h2>
       <p class="faqItem">The easiest way to travel to Berkeley is to fly into either San Francisco (SFO) or Oakland (OAK) airport. Berkeley is a short taxi or <a href='https://www.bart.gov'>BART</a> ride away.</p>
 
@@ -322,10 +325,12 @@
           ['UC Berkeley', 37.871899, -122.25854, 3],
         ];
 
+
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 10,
           center: new google.maps.LatLng(37.7810817, -122.3699879),
-          mapTypeId: google.maps.MapTypeId.ROADMAP
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+          scrollwheel: false
         });
 
         var infowindow = new google.maps.InfoWindow();
