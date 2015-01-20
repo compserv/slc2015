@@ -189,10 +189,18 @@
   .faqItem {
     font-family: "Open Sans", sans-serif;
     font-weight: 300;
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 7%;
+    padding-right: 7%;
     margin: 25px;
     text-align: left;
+  }
+  #mapCol {
+    padding: 0;
+    margin: 0;
+  }
+  #map {
+    height: 474px;
+    width: 100%;
   }
 
   /* Sponsors */
@@ -291,17 +299,21 @@
   </div>
 </div>
 
-<div class="container-fluid" id="faq" align="center">
-  <h2 id="faqTitle">Getting to SLC 2015</h2>
+<div class="container-fluid" align="center">
   <div class="row">
-  <p class="faqItem">The easiest way to travel to Berkeley is to fly into either San Francisco (SFO) or Oakland (OAK) airport. Berkeley is a short taxi or <a href='https://www.bart.gov'>BART</a> ride away.</p>
+    <div class="col-md-7" id="faq">
+  <h2 id="faqTitle">Getting to SLC 2015</h2>
+      <p class="faqItem">The easiest way to travel to Berkeley is to fly into either San Francisco (SFO) or Oakland (OAK) airport. Berkeley is a short taxi or <a href='https://www.bart.gov'>BART</a> ride away.</p>
 
-  <p class="faqItem">In Berkeley, stay at <a href='http://bancrofthotel.com/'>Bancroft Hotel</a> or <a href='http://www.hotelshattuckplaza.com/'>Hotel Shattuck Plaza</a>. These hotels are walking distance from the conference. Mention the "university discount" and that you are part of the SLC 2015 conference for a rate discount.</p>
+      <p class="faqItem">In Berkeley, stay at <a href='http://bancrofthotel.com/'>Bancroft Hotel</a> or <a href='http://www.hotelshattuckplaza.com/'>Hotel Shattuck Plaza</a>. These hotels are walking distance from the conference. Mention the "university discount" and that you are part of the SLC 2015 conference for a rate discount.</p>
 
-  <p class="faqItem">IEEE-HKN can reimburse up to US$250 per Chapter to help offset travel expenses. Have questions about funding your trip? Send an e-mail to info@hkn.org to get in touch.</p>
+      <p class="faqItem">IEEE-HKN can reimburse up to US$250 per Chapter to help offset travel expenses. Have questions about funding your trip? Send an e-mail to info@hkn.org to get in touch.</p>
 
-  <p class="faqItem">Stay tuned for more updates on this page, and the <a href='https://www.facebook.com/IEEE.HKN'>IEEE-HKN Facebook page</a>.</p>
-      <div id="map" style="width: 500px; height: 500px;"></div>
+      <p class="faqItem">Stay tuned for more updates on this page, and the <a href='https://www.facebook.com/IEEE.HKN'>IEEE-HKN Facebook page</a>.</p>
+    </div>
+    <div class="col-md-5" id="mapCol">
+      <div id="map"></div>
+    </div>
 
       <script type="text/javascript">
         var locations = [
