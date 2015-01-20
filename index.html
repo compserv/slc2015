@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
   <style>
@@ -300,6 +301,39 @@
   <p class="faqItem">IEEE-HKN can reimburse up to US$250 per Chapter to help offset travel expenses. Have questions about funding your trip? Send an e-mail to info@hkn.org to get in touch.</p>
 
   <p class="faqItem">Stay tuned for more updates on this page, and the <a href='https://www.facebook.com/IEEE.HKN'>IEEE-HKN Facebook page</a>.</p>
+      <div id="map" style="width: 500px; height: 500px;"></div>
+
+      <script type="text/javascript">
+        var locations = [
+          ['San Francisco Airport', 37.621313, -122.378955, 1],
+          ['Oakland Airport', 37.712569, -122.219743, 2],
+          ['UC Berkeley', 37.871899, -122.25854, 3],
+        ];
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 10,
+          center: new google.maps.LatLng(37.7810817, -122.3699879),
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        });
+
+        var infowindow = new google.maps.InfoWindow();
+
+        var marker, i;
+
+        for (i = 0; i < locations.length; i++) {
+          marker = new google.maps.Marker({
+            position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+            map: map
+          });
+
+          google.maps.event.addListener(marker, 'click', (function(marker, i) {
+            return function() {
+              infowindow.setContent(locations[i][0]);
+              infowindow.open(map, marker);
+            }
+          })(marker, i));
+        }
+      </script>
   </div>
 </div>
 
