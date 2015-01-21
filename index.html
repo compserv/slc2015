@@ -126,6 +126,7 @@
     margin: 10px;
     font-family: "Open Sans", sans-serif;
     font-weight: 300;
+    font-size: 15px !important;
   }
   .circle {
     width:100px;
@@ -177,7 +178,7 @@
 
   /* FAQ */
   #faq {
-    background: #79bcd1;
+    background: #fff;
   }
   #faqText {
     padding: 40px;
@@ -224,6 +225,9 @@
     font-size: 40px;
     font-weight: 300;
   }
+  #sponsors .row {
+    margin: 35px;
+  }
   </style>
  
 </head>
@@ -249,7 +253,7 @@
 <div class="container-fluid" id="scheduleBlock">
   <div id="scheduleDateContainer" align="center">
     <h2 id="scheduleTitle">Schedule of Events</h2>
-    <p class="scheduleDates circle" data-target="#schedule" data-slide-to="0">Friday</p>
+    <p class="scheduleDates circle" data-target="#schedule" data-slide-to="0" style="background-color:#B4CA59">Friday</p>
     <p class="scheduleDates circle" data-target="#schedule" data-slide-to="1">Saturday</p>
     <p class="scheduleDates circle" data-target="#schedule" data-slide-to="2">Sunday</p>
   </div>
@@ -483,6 +487,7 @@
     </div>
 
   </div>
+  <div align="center"><i class="fa fa-angle-down"></i></div>
 </div>
 
 <div class="container-fluid" id="faq" align="center">
@@ -561,4 +566,13 @@
 </div>
 
 </body>
+<script>
+  $(document).ready(function() {
+    $(".scheduleDates").on("click", function() {
+        $(".scheduleDates").css("background-color", "#79BCD1");
+        $(this).css("background-color", "#B4CA59");
+    });
+  });
+
+</script>
 </html>
