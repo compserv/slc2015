@@ -8,15 +8,21 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
   <style>
   body {
     background-color: #53626F;
   }
 
+  #splash {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
   #logo {
     display: block;
-    margin: 100px auto 0 auto;
+    margin: 0 auto 0 auto;
     height: 200px;
   }
 
@@ -89,7 +95,6 @@
     
   #register .alt-register a {
     color: #b5ca62;
-
   }
 
   #register .alt-register a:hover {
@@ -97,14 +102,141 @@
     text-decoration: none;
   }
   
+  /* Schedule Properties */
+  #scheduleBlock {
+    background: url("assets/Berkeley.jpg") no-repeat;
+    background-size: auto auto;
+    background-attachment: fixed;
+    padding: 50px 150px 50px 150px;
+  }
+  #scheduleTitle {
+    font-family: "Open Sans", sans-serif;
+    font-size: 40px;
+    font-weight: 300;
+    color: #52626F;
+  }
+  .carousel-inner {
+    height: 500px;
+    overflow: scroll;
+  }
+  .scheduleDates {
+    background: #ff0000;
+    display: inline-block;
+    cursor: pointer;
+    margin: 10px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+    font-size: 15px !important;
+  }
+  .circle {
+    width:100px;
+    height:100px;
+    border-radius:50px;
+    font-size:20px;
+    color:#fff;
+    line-height:100px;
+    text-align:center;
+    background:#79BCD1;
+  }
+  #schedule {
+    margin-top: 10px;
+  }
+  .scheduleTitle{
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+    font-size: 30px;
+    margin: 50px auto 30px 50px;
+  }
+  .scheduleItem{
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin: 40px;
+  }
+  .scheduleItemTime {
+    font-size: 16px;
+  }
+  .scheduleItemTitle {
+    font-weight: 300;
+    font-size: 25px;
+    color: #79BCD1;
+    margin: 10px 0 10px 0;
+  }
+  .scheduleItemLocationLink{
+    color: #000;
+  }
+  .scheduleItemLocationLink:hover {
+    text-decoration: none;
+    color: #52626F;
+  }
+  .scheduleItemHr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-color: #000;
+  }
+
+  /* FAQ */
+  #faq {
+    background: #fff;
+  }
+  #faqText {
+    padding: 40px;
+  }
+
+
+  #faqTitle {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+    font-size: 40px;
+    margin: 25px;
+  }
+
+  .faqItem {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+    padding-left: 7%;
+    padding-right: 7%;
+    margin: 25px;
+    text-align: left;
+  }
+  #mapCol {
+    padding: 0;
+    margin: 0;
+  }
+  #map {
+    height: 520px;
+    width: 100%;
+  }
+  .placeName {
+   width: 100px;
+  }
+
+  /* Sponsors */
+  #sponsors {
+    background: url("assets/Berkeley.jpg") no-repeat;
+    background-size: auto auto;
+    background-position: left;
+    background-attachment: fixed;
+    padding: 50px 150px 50px 150px;
+  }
+  #sponsorsTitle {
+    font-family: "Open Sans", sans-serif;
+    font-size: 40px;
+    font-weight: 300;
+  }
+  #sponsors .row {
+    margin: 35px;
+  }
   </style>
+ 
 </head>
 <body>
 
-<div class="container-fluid">
+<div class="container-fluid" id="splash">
   <div class="row">
     <div id="main" class="col-xs-offset-2 col-xs-8">
-      <img id="logo" src="../assets/conference_logo4.png" alt="" />
+      <img id="logo" src="assets/conference_logo4.png" alt="" />
       <h1 class="title">Eta Kappa Nu, Mu Chapter</h1>
       <h2 class="subtitle">Student Leadership Conference</h2>
       <h3 class="title-meta">March 20 - 22, 2015 &mdash; UC Berkeley</h3>
@@ -118,5 +250,329 @@
 </div>
 
 
+<div class="container-fluid" id="scheduleBlock">
+  <div id="scheduleDateContainer" align="center">
+    <h2 id="scheduleTitle">Schedule of Events</h2>
+    <p class="scheduleDates circle" data-target="#schedule" data-slide-to="0" style="background-color:#B4CA59">Friday</p>
+    <p class="scheduleDates circle" data-target="#schedule" data-slide-to="1">Saturday</p>
+    <p class="scheduleDates circle" data-target="#schedule" data-slide-to="2">Sunday</p>
+  </div>
+
+  <div id="schedule" class="carousel slide" data-ride="carousel" data-interval="false">
+    <!-- Indicators -->
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <h3 class="scheduleTitle">Friday, March 20</h3>
+
+        <!-- Begin item -->
+        <div class="scheduleItem">
+          <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+          <span class="scheduleItemTime">2:00 PM - 5:00 PM</span>
+          <h4 class="scheduleItemTitle">Hotel Check-In</h4>
+          <hr class="scheduleItemHr">
+          <a class="scheduleItemLocationLink" href="https://www.google.com/maps/place/2680+Bancroft+Way,+Berkeley,+CA+94704">
+            <i class="fa fa-map-marker"></i>
+            <span class="scheduleItemLocation">Bancroft Hotel</span>
+          </a>
+          or
+          <a class="scheduleItemLocationLink" href="https://www.google.com/maps/place/2086+Allston+Way,+Berkeley,+CA+94704">
+            <span class="scheduleItemLocation">Hotel Shattuck Plaza</span>
+          </a>
+        </div>
+        <!-- end item -->
+
+        <!-- Begin item -->
+        <div class="scheduleItem">
+          <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+          <span class="scheduleItemTime">4:30 PM - 6:00 PM</span>
+          <h4 class="scheduleItemTitle">Registration</h4>
+          <hr class="scheduleItemHr">
+          <a class="scheduleItemLocationLink" href="https://www.google.com/maps/place/210+Stadium+Rim+Way,+Berkeley,+CA+94720">
+            <i class="fa fa-map-marker"></i>
+            <span class="scheduleItemLocation">Stadium - University Club</span>
+          </a>
+        </div>
+        <!-- end item -->
+
+        <!-- Begin item -->
+        <div class="scheduleItem">
+          <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+          <span class="scheduleItemTime">6:00 - 6:30 PM</span>
+          <h4 class="scheduleItemTitle">Opening Remarks</h4>
+          <hr class="scheduleItemHr">
+          <a class="scheduleItemLocationLink" href="https://www.google.com/maps/place/210+Stadium+Rim+Way,+Berkeley,+CA+94720">
+            <i class="fa fa-map-marker"></i>
+            <span class="scheduleItemLocation">Stadium - University Club</span>
+          </a>
+        </div>
+        <!-- end item -->
+
+        <!-- Begin item -->
+        <div class="scheduleItem">
+          <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+          <span class="scheduleItemTime">6:30 - 7:15 PM</span>
+          <h4 class="scheduleItemTitle">Introductory Keynote</h4>
+          <hr class="scheduleItemHr">
+          <a class="scheduleItemLocationLink" href="https://www.google.com/maps/place/210+Stadium+Rim+Way,+Berkeley,+CA+94720">
+            <i class="fa fa-map-marker"></i>
+            <span class="scheduleItemLocation">Stadium - University Club</span>
+          </a>
+        </div>
+        <!-- end item -->
+
+        <!-- Begin item -->
+        <div class="scheduleItem">
+          <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+          <span class="scheduleItemTime">7:15 - 9:45 PM</span>
+          <h4 class="scheduleItemTitle">Dinner and Icebreakers</h4>
+          <hr class="scheduleItemHr">
+          <a class="scheduleItemLocationLink" href="https://www.google.com/maps/place/210+Stadium+Rim+Way,+Berkeley,+CA+94720">
+            <i class="fa fa-map-marker"></i>
+            <span class="scheduleItemLocation">Stadium - University Club</span>
+          </a>
+        </div>
+        <!-- end item -->
+      </div>
+
+      <div class="item">
+        <h3 class="scheduleTitle">Saturday, March 21</h3>
+        <!-- Begin item -->
+        <div class="scheduleItem">
+          <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+          <span class="scheduleItemTime">8:00 AM - 8:45 AM</span>
+          <h4 class="scheduleItemTitle">Breakfast</h4>
+          <hr class="scheduleItemHr">
+          <a class="scheduleItemLocationLink" href="https://www.google.com/maps/place/210+Stadium+Rim+Way,+Berkeley,+CA+94720">
+            <i class="fa fa-map-marker"></i>
+            <span class="scheduleItemLocation">Stadium - Stadium Club</span>
+          </a>
+        </div>
+        <!-- end item -->
+
+        <!-- Begin item -->
+        <div class="scheduleItem">
+          <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+          <span class="scheduleItemTime">8:45 AM - 9:10 AM</span>
+          <h4 class="scheduleItemTitle">Breakout Session Introductions</h4>
+          <hr class="scheduleItemHr">
+          <a class="scheduleItemLocationLink" href="https://www.google.com/maps/place/210+Stadium+Rim+Way,+Berkeley,+CA+94720">
+            <i class="fa fa-map-marker"></i>
+            <span class="scheduleItemLocation">Stadium - University Club</span>
+          </a>
+        </div>
+        <!-- end item -->
+
+        <!-- Begin item -->
+        <div class="scheduleItem">
+          <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+          <span class="scheduleItemTime">9:15 - 10:30 AM</span>
+          <h4 class="scheduleItemTitle">EE/CS/Pro Breakout Session #1</h4>
+          <hr class="scheduleItemHr">
+          <a class="scheduleItemLocationLink" href="https://www.google.com/maps/place/210+Stadium+Rim+Way,+Berkeley,+CA+94720">
+            <i class="fa fa-map-marker"></i>
+            <span class="scheduleItemLocation">Stadium - University Club and Stadium Club</span>
+          </a>
+        </div>
+        <!-- end item -->
+
+        <!-- Begin item -->
+        <div class="scheduleItem">
+          <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+          <span class="scheduleItemTime">10:45 - 12:00 PM</span>
+          <h4 class="scheduleItemTitle">EE/CS/Pro Breakout Session #2</h4>
+          <hr class="scheduleItemHr">
+          <a class="scheduleItemLocationLink" href="https://www.google.com/maps/place/210+Stadium+Rim+Way,+Berkeley,+CA+94720">
+            <i class="fa fa-map-marker"></i>
+            <span class="scheduleItemLocation">Stadium - University Club and Stadium Club</span>
+          </a>
+        </div>
+        <!-- end item -->
+
+        <!-- Begin item -->
+        <div class="scheduleItem">
+          <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+          <span class="scheduleItemTime">12:00 - 1:00 PM</span>
+          <h4 class="scheduleItemTitle">Lunch</h4>
+          <hr class="scheduleItemHr">
+          <a class="scheduleItemLocationLink" href="https://www.google.com/maps/place/210+Stadium+Rim+Way,+Berkeley,+CA+94720">
+            <i class="fa fa-map-marker"></i>
+            <span class="scheduleItemLocation">Stadium - University Club</span>
+          </a>
+        </div>
+        <!-- end item -->
+
+        <!-- Begin item -->
+        <div class="scheduleItem">
+          <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+          <span class="scheduleItemTime">1:15 - 2:30 PM</span>
+          <h4 class="scheduleItemTitle">EE/CS/Pro Breakout Session #3</h4>
+          <hr class="scheduleItemHr">
+          <a class="scheduleItemLocationLink" href="https://www.google.com/maps/place/210+Stadium+Rim+Way,+Berkeley,+CA+94720">
+            <i class="fa fa-map-marker"></i>
+            <span class="scheduleItemLocation">Stadium - University Club and Stadium Club</span>
+          </a>
+        </div>
+        <!-- end item -->
+        
+        <!-- Begin item -->
+        <div class="scheduleItem">
+          <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+          <span class="scheduleItemTime">3:00 - 5:00 PM</span>
+          <h4 class="scheduleItemTitle">Group Puzzle Hunt</h4>
+          <hr class="scheduleItemHr">
+          <a class="scheduleItemLocationLink" href="https://www.google.com/maps/place/University+of+California,+Berkeley">
+            <i class="fa fa-map-marker"></i>
+            <span class="scheduleItemLocation">UC Berkeley Campus</span>
+          </a>
+        </div>
+        <!-- end item -->
+
+        <!-- Begin item -->
+        <div class="scheduleItem">
+          <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+          <span class="scheduleItemTime">7:00 - 8:00 PM</span>
+          <h4 class="scheduleItemTitle">Dinner</h4>
+          <hr class="scheduleItemHr">
+        </div>
+        <!-- end item -->
+
+        <!-- Begin item -->
+        <div class="scheduleItem">
+          <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+          <span class="scheduleItemTime">8:00 - 8:30 PM</span>
+          <h4 class="scheduleItemTitle">Academia Keynote</h4>
+          <hr class="scheduleItemHr">
+        </div>
+        <!-- end item -->
+
+        <!-- Begin item -->
+        <div class="scheduleItem">
+          <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+          <span class="scheduleItemTime">8:30 - 9:15 PM</span>
+          <h4 class="scheduleItemTitle">Industry Keynote</h4>
+          <hr class="scheduleItemHr">
+        </div>
+        <!-- end item -->
+
+        <!-- Begin item -->
+        <div class="scheduleItem">
+          <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+          <span class="scheduleItemTime">9:15 - 9:30 PM</span>
+          <h4 class="scheduleItemTitle">Final Remarks</h4>
+          <hr class="scheduleItemHr">
+        </div>
+        <!-- end item -->
+
+      </div>
+
+      <div class="item">
+        <h3 class="scheduleTitle">Sunday, March 22</h3>
+
+        <!-- Begin item -->
+        <div class="scheduleItem">
+          <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+          <span class="scheduleItemTime">10:00 - 2:00 PM</span>
+          <h4 class="scheduleItemTitle">Tours</h4>
+          <hr class="scheduleItemHr">
+          <a class="scheduleItemLocationLink" href="https://www.google.com/maps/place/University+of+California,+Berkeley">
+            <i class="fa fa-map-marker"></i>
+            <span class="scheduleItemLocation">UC Berkeley Campus</span>
+          </a>
+        </div>
+        <!-- end item -->
+      </div>
+
+    </div>
+
+  </div>
+  <div align="center"><i class="fa fa-angle-down"></i></div>
+</div>
+
+<div class="container-fluid" id="faq" align="center">
+  <div class="row">
+    <div class="col-md-7" id="faqText">
+  <h2 id="faqTitle">Getting to SLC 2015</h2>
+      <p class="faqItem">The easiest way to travel to Berkeley is to fly into either San Francisco (SFO) or Oakland (OAK) airport. Berkeley is a short taxi or <a href='https://www.bart.gov'>BART</a> ride away.</p>
+
+      <p class="faqItem">In Berkeley, stay at <a href='http://bancrofthotel.com/'>Bancroft Hotel</a> or <a href='http://www.hotelshattuckplaza.com/'>Hotel Shattuck Plaza</a>. These hotels are walking distance from the conference. Mention the "university discount" and that you are part of the SLC 2015 conference for a rate discount.</p>
+
+      <p class="faqItem">IEEE-HKN can reimburse up to US$250 per Chapter to help offset travel expenses. Have questions about funding your trip? Send an e-mail to info@hkn.org to get in touch.</p>
+
+      <p class="faqItem">Stay tuned for more updates on this page, and the <a href='https://www.facebook.com/IEEE.HKN'>IEEE-HKN Facebook page</a>.</p>
+    </div>
+    <div class="col-md-5" id="mapCol">
+      <div id="map"></div>
+    </div>
+
+      <script type="text/javascript">
+        var locations = [
+          ['<div class="placeName">San Francisco Airport</div>', 37.621313, -122.378955, 1],
+          ['<div class="placeName">Oakland Airport</div>', 37.712569, -122.219743, 2],
+          ['<div class="placeName">UC Berkeley</div>', 37.871899, -122.25854, 3],
+        ];
+
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 10,
+          center: new google.maps.LatLng(37.7810817, -122.3699879),
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+          scrollwheel: false
+        });
+
+        var infowindow = new google.maps.InfoWindow();
+
+        var marker, i;
+
+        for (i = 0; i < locations.length; i++) {
+          marker = new google.maps.Marker({
+            position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+            map: map
+          });
+
+          google.maps.event.addListener(marker, 'click', (function(marker, i) {
+            return function() {
+              infowindow.setContent(locations[i][0]);
+              infowindow.open(map, marker);
+            }
+          })(marker, i));
+        }
+      </script>
+  </div>
+</div>
+
+<div class="container-fluid" id="sponsors" align="center">
+    <h2 id="sponsorsTitle">A Big Thanks to Our Sponsors</h2>
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4"><img class="img-responsive" src="assets/juniper.png" /></div>
+      <div class="col-md-4"></div>
+    </div>
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-3"><img class="img-responsive" src="assets/A9.png" /></div>
+      <div class="col-md-3"><img class="img-responsive" src="assets/GM.png" /></div>
+      <div class="col-md-3"></div>
+    </div>
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-2"><img class="img-responsive" src="assets/dropbox.png" /></div>
+      <div class="col-md-2"><img class="img-responsive" src="assets/purestorage.png" /></div>
+      <div class="col-md-2"><img class="img-responsive" src="assets/Liveramp.png" /></div>
+      <div class="col-md-2"><img class="img-responsive" src="assets/guidebook.png" /></div>
+      <div class="col-md-2"></div>
+    </div>
+</div>
+
 </body>
+<script>
+  $(document).ready(function() {
+    $(".scheduleDates").on("click", function() {
+        $(".scheduleDates").css("background-color", "#79BCD1");
+        $(this).css("background-color", "#B4CA59");
+    });
+  });
+
+</script>
 </html>
