@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>2015 HKN Student Leadership Conference</title>
+  <title data="Yes. this is the right place. But how are you going to GET THERE?">2015 HKN Student Leadership Conference</title>
   <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
   <link rel="icon" href="../assets/bw_logoNoText.png" type="image/x-icon" />
   <!-- Latest compiled and minified CSS -->
@@ -237,7 +237,7 @@
   <div class="row">
     <div id="main" class="col-xs-offset-2 col-xs-8">
       <img id="logo" src="assets/conference_logo4.png" alt="" />
-      <h1 class="title">Eta Kappa Nu, Mu Chapter</h1>
+      <h1 class="title" >Eta Kappa Nu, Mu Chapter</h1>
       <h2 class="subtitle">Student Leadership Conference</h2>
       <h3 class="title-meta">March 20 - 22, 2015 &mdash; UC Berkeley</h3>
 
@@ -535,7 +535,7 @@
 <div class="container-fluid" id="faq" align="center">
   <div class="row">
     <div class="col-md-7" id="faqText">
-  <h2 id="faqTitle">Getting to SLC 2015</h2>
+  <h2 id="faqTitle" data="You're already at SLC2015. Why don't you go to https://gist.github.com/andrewfang/7c64ec432664c0059352" >Getting to SLC 2015</h2>
       <p class="faqItem">The easiest way to travel to Berkeley is to fly into either San Francisco (SFO) or Oakland (OAK) airport. Berkeley is a short taxi or <a href='https://www.bart.gov'>BART</a> ride away.</p>
 
       <p class="faqItem">In Berkeley, stay at <a href='http://bancrofthotel.com/'>Bancroft Hotel</a> or <a href='http://www.hotelshattuckplaza.com/'>Hotel Shattuck Plaza</a>. These hotels are walking distance from the conference. Mention the "university discount" and that you are part of the SLC 2015 conference for a rate discount.</p>
@@ -608,6 +608,8 @@
 </body>
 <script>
   $(document).ready(function() {
+    console.log("Keep going...");
+    console.log("Look inside the title of the page");
     $(".scheduleDates").on("click", function() {
         $(".scheduleDates").css("background-color", "#79BCD1");
         $(this).css("background-color", "#B4CA59");
